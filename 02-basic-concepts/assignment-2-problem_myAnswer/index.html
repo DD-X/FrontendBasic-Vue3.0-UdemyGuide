@@ -30,7 +30,9 @@
 			<hr />
 
 			<!-- 3) Repeat 2) but only output the entered value if the ENTER key was pressed -->
-			<input type="text" v-on:keydown="saveInput" v-on:keyup.enter="confirmInput" />
+			<input type="text" 
+			v-on:keydown="saveInput" 
+			v-on:keyup.enter="confirmInput" />
 			<p>Result:{{userValue_x}}</p>
 		</section>
 	</body>
