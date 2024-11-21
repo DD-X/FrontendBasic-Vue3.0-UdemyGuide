@@ -4,7 +4,11 @@ const app = Vue.createApp({
 			currentTask:'',
 			taskList:[],
 			isShow:true,
-			isVShow:'ok',
+		}
+	},
+	computed:{
+		buttonCaption(){
+			return this.isShow?'Hide List':'Show List';
 		}
 	},
 	methods:{
