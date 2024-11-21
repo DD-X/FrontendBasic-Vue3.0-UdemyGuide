@@ -1,34 +1,28 @@
 const app = Vue.createApp({
 	data(){
 		return{
-			value:'',
-			user:'',
-			isToggled:false,
-			isVisible:'',
-			input:'',
+			inputClass:'',
+			paragraphIsVisible:true,
+			inputBackgroundColor:'',
 		}
+	},
+	computed:{
+		paraClass(){
+			return{
+				user1: this.inputClass === 'user1',
+				user2: this.inputClass === 'user2',
+				visible:this.paragraphIsVisible,
+				hidden:!this.paragraphIsVisible,
+			};
+		},
 	},
 	methods:{
 		checkInput(event){
 			this.value = event.target.value;
-			console.log(this.value);
-			if(this.value==="user1"){
-				this.user = "user1";
-			}else if(this.value==="user2"){
-				this.user = "user2";
-			}
 		},
-		toggleParagraph(){
-			this.isToggled = !this.isToggled;
-			if(this.isToggled){
-				this.isVisible = "visible";
-			}else{
-				this.isVisible = "hidden";
-			}
+		toggleParagraphVisibility(){
+			this.paragraphIsVisible = !this.paragraphIsVisible;
 		},
-		checkInput(event){
-			this.input = event.target.value;
-		}
 	}
 });
 
