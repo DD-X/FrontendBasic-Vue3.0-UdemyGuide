@@ -12,6 +12,8 @@ const app = Vue.createApp({
 		setText() {
 			// this.message = this.currentUserInput;
 			// now we only store (directly) it when we need it
+			// 指向这里 <input type="text" ref="userText" />
+			console.log(this.$refs.userText);
 			this.message = this.$refs.userText.value;
 		},
 	},
@@ -47,6 +49,7 @@ setTimeout(() => {
 }, 3000);
 
 const app2 = Vue.createApp({
+	//把HTML的模板写到这里
 	template: `
     <p>{{ favoriteMeal }}</p>
     `,
