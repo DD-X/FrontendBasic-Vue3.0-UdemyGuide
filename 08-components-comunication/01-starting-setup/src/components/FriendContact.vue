@@ -24,6 +24,7 @@
 <script>
 export default {
 	// props: ['name', 'phoneNumber', 'emailAddress'],
+	//对于大型项目，推荐使用对象语法！
 	props: {
 		id: {
 			type: String,

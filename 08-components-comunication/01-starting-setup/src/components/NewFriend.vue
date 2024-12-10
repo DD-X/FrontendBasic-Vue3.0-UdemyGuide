@@ -1,4 +1,5 @@
 <template>
+	<!-- 防止网页重新加载 prevent -->
 	<form @submit.prevent="submitData" autocomplete="off">
 		<div>
 			<label for="name">Name</label>

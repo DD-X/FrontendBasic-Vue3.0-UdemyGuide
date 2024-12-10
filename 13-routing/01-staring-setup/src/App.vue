@@ -1,24 +1,34 @@
 <template>
-  <the-navigation @set-page="setActivePage"></the-navigation>
+  <!-- 不使用导航栏进行激活？ -->
+  <!-- <the-navigation @set-page="setActivePage"></the-navigation> -->
+  <the-navigation></the-navigation>
   <main>
-    <component :is="activePage"></component>
+    <!-- 使用router 而不是动态component -->
+    <!-- <component :is="activePage"></component> -->
+    <router-view></router-view>
   </main>
+  <footer>
+    <!-- 与slots相似 -->
+    <router-view name="footer"></router-view>
+  </footer>
 </template>
 
 <script>
-import TeamsList from './components/teams/TeamsList.vue';
-import UsersList from './components/users/UsersList.vue';
+//不使用手动引入的模式 而是使用router的模式
+// import TeamsList from './components/teams/TeamsList.vue';
+// import UsersList from './components/users/UsersList.vue';
 import TheNavigation from './components/nav/TheNavigation.vue';
 
 export default {
   components: {
     TheNavigation,
-    TeamsList,
-    UsersList,
+    // 已经在main.js中通过router引入
+    // TeamsList,
+    // UsersList,
   },
   data() {
     return {
-      activePage: 'teams-list',
+      // activePage: 'teams-list',
       teams: [
         { id: 't1', name: 'Frontend Engineers', members: ['u1', 'u2'] },
         { id: 't2', name: 'Backend Engineers', members: ['u1', 'u2', 'u3'] },
@@ -39,11 +49,11 @@ export default {
       users: this.users,
     };
   },
-  methods: {
-    setActivePage(page) {
-      this.activePage = page;
-    },
-  },
+  // methods: {
+  //   setActivePage(page) {
+  //     this.activePage = page;
+  //   },
+  // },
 };
 </script>
 

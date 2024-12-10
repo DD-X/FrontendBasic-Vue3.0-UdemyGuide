@@ -22,6 +22,7 @@ export default {
 				phone: '096 72941 889',
 				email: 'muhamuhu@mail.com',
 			},
+			friendIsFavorite: this.isFavorite,
 		};
 	},
 	methods: {
